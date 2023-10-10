@@ -1,6 +1,22 @@
 const readToken = "1abe31571ce7ca01a72822298ec4c2";
-
-const getData = async (query) => {
+///cambiar eq por in y pasar un array de todas las lecciones
+const getData = async (arr) => {
+  const query = `
+  query A {
+    allCourses(filter: {title: {in: [${arr}]}}) {
+      title
+      lessons {
+        lessonNumber
+        words {
+          name
+          image {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
   const api = "https://graphql.datocms.com/";
   const requestOptions = {
     method: "POST",
@@ -10,7 +26,7 @@ const getData = async (query) => {
       Authorization: `Bearer ${readToken}`,
       "X-Api-Version": "3",
     },
-    body: JSON.stringify({ query }), // Convierte la consulta en formato JSON
+    body: JSON.stringify({ query }),
   };
   try {
     const response = await fetch(api, requestOptions);
