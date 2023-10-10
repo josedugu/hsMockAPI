@@ -9,7 +9,6 @@
     "nodemon": "^3.0.1"
   },
   "scripts": {
-    "dev":"nodemon src/index.js",
-    "build": "npm install && npm prune --production"
+    "dev": "nodemon src/index.js"
   }
 }
