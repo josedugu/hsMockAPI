@@ -1,0 +1,27 @@
+{
+    "rewrites": [
+      { "source": "/src/(.*)", "destination": "/server.js" },
+      { "source": "/(.*)", "destination": "/server.js" }
+    ],
+    "routes": [
+      {
+        "src": "/words",
+        "methods": ["POST"],
+        "dest": "src/words.js"
+      },
+      {
+        "src": "/:studentKey/level",
+        "methods": ["GET"],
+        "dest": "src/getWords.js"
+      }
+    ],
+    "functions": {
+      "src": {
+        "source": "/src/(.*)",
+        "handler": "server.js",
+        "methods": ["GET", "POST"]
+      }
+    },
+    "cleanUrls": true
+  }
+  
