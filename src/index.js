@@ -1,6 +1,6 @@
 const routes = require("./routes/results.routes");
 const fastify = require("fastify")({
-  logger: true,
+  logger: false,
 });
 
 require("./utils/mongoose");

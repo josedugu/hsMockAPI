@@ -1,4 +1,5 @@
 const resultsCtr = require("../controllers/words.controller");
+const wordsCtr = require("../controllers/updateWord.controller");
 const routes = [
   {
     url: "/words",
@@ -13,7 +14,7 @@ const routes = [
   {
     url: "/updateWord",
     method: "POST",
-    handler: resultsCtr.updateWord
+    handler: wordsCtr.updateWord
   },
 ];
 
