@@ -10,6 +10,11 @@ const routes = [
     method: "GET",
     handler: resultsCtr.getWords
   },
+  {
+    url: "/updateWord",
+    method: "POST",
+    handler: resultsCtr.updateWord
+  },
 ];
 
 module.exports = routes;

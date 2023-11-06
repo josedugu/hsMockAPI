@@ -1,5 +1,4 @@
 const Words = require("../models/words.model");
-const hsData = require("../request/hsAPI");
 const { getData } = require("../request/datoCms");
 const mockStudent = require("../request/mockStudentData");
 
@@ -12,7 +11,6 @@ const postWords = async (request, reply) => {
 const getWords = async (req, reply) => {
   const studentKey = req.params.studentKey;
   const studentData = await mockStudent();
-  //console.log("studentData",studentData);
   const studentLessons = studentData.lessons.map((lesson) => lesson.course);
   const set = new Set(studentLessons);
   const lessonsArr = [...set];
