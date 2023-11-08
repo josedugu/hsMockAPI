@@ -16,6 +16,11 @@ const routes = [
     method: "POST",
     handler: wordsCtr.updateWord
   },
+  {
+    url: "/updateStudentGameLevel",
+    method: "POST",
+    handler: wordsCtr.updateStudentGameLevel
+  },
 ];
 
 module.exports = routes;
